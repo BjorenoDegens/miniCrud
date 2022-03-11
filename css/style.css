@@ -5,35 +5,34 @@
 /*HEADER*/
 header {
   width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+}
+.firstheaderbox {
+  width: 100%;
   background-color: red;
-  padding-bottom: 10px;
-}
-header .boxheader {
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-header .boxheader .imgheader {
-  width: 75px;
-  height: 75px;
-  margin: 5px;
-}
-header .tittle {
-  width: auto;
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-right: 100px;
-  border-radius: 10px;
-  background-color: orange;
-  padding: 15px 32px;
+}
+header .boxheader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .boxheader .imgheader {
+  width: 115px;
+  height: 115px;
+  margin: 5px;
+}
+header .firstheaderbox .boxheader .headertext {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .headertext a {
+  text-decoration: none;
+  color: black;
 }
 /*MAIN*/
 main {
@@ -41,31 +40,31 @@ main {
   display: flex;
   justify-content: center;
 }
-main .imgmain {
+main .container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+main .container .imgmain {
   width: 600px;
   height: 400px;
 }
-main .imgmenu {
+main .container .imgmenu {
   width: 600px;
   height: 400px;
 }
-.menugerechten {
-  position: relative;
+main .container .menugerechten {
   padding: 12px 16px;
   background-color: orange;
   width: auto;
-  height: 100px;
-  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-/*MENU
 .menu {
-  position: relative;
-  display: inline-block;
-  border-radius: 1px;
-  background-color: orange;
-  padding: 3px;
+  margin-right: 20px;
 }
-
+/*
 .menugerechten {
   display: none;
   position: absolute;
@@ -73,8 +72,87 @@ main .imgmenu {
   z-index: 1;
   background-color: orange;
 }
-
-.menu:hover .menugerechten {
-  display: block;
-}
 */
+
+.menugerechten a:hover {
+  background-color: white;
+  color: orange;
+}
+
+main .menugerechten a {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+main .container .gerechtenlijst {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  min-width: 550px;
+}
+main .container .gerechtenlijst .gerechtheader {
+  background-color: red;
+  color: white;
+  padding: 20px;
+}
+main .container .gerechtenlijst .gerechtenfirst {
+  border: 1px solid red;
+  padding: 20px;
+}
+main .container .gerechtenlijst .gerechten {
+  border: 1px solid red;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.mail {
+  width: 25px;
+  height: 25px;
+  background: url("/img/envelope-solid\ \(1\).svg") no-repeat;
+  background-size: contain;
+  margin-right: 2px;
+}
+.mail:hover {
+  background: url("/img/envelope-open-solid.svg") no-repeat;
+  background-size: contain;
+}
+
+.phone {
+  width: 25px;
+  height: 25px;
+  background: url("/img/blender-phone-solid.svg") no-repeat;
+  background-size: contain;
+  margin-right: 2px;
+}
+
+.phone:hover {
+  background: url("/img/phone-volume-solid\ \(1\).svg") no-repeat;
+  background-size: contain;
+}
+.adres {
+  width: 25px;
+  height: 25px;
+  background: url("/img/location-pin-solid.svg") no-repeat;
+  background-size: contain;
+  margin-right: 2px;
+}
+
+.adres:hover {
+  background: url("/img/location-dot-solid.svg") no-repeat;
+  background-size: contain;
+}
+
+.shoppingcard {
+  width: 25px;
+  height: 25px;
+  background: url("/img/cart-shopping-solid.svg") no-repeat;
+  background-size: contain;
+  margin-right: 2px;
+}
+
+.shoppingcard:hover {
+  background: url("/img/cart-arrow-down-solid.svg") no-repeat;
+  background-size: contain;
+}
