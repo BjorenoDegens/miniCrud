@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Dun&Döner</title>
   </head>
   <body>
     <header>
@@ -39,16 +42,15 @@
     <main>
       <div class="container">
         <div class="menu">
+          <input type="search" onkeyup="searchbar" name="search" placeholder="Search..">
           <div class="menugerechten">
-            <h1>Dun en Döner</h1>
-            <p>Gerechten</p>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#1gerecht" class="textline">headergerecht</a>
+            <a href="#2gerecht" class="textline">Lidasdasdk 2</a>
+            <a href="#3gerecht" class="textline">Link 3</a>
           </div>
         </div>
         <div class="gerechtenlijst">
-          <div class="gerechtheader">
+          <div id="1gerecht" class="gerechtheader">
             <h1>headergerecht</h1>
           </div>
           <div class="gerechtenfirst">
@@ -57,9 +59,35 @@
           <div class="gerechten">
             <h1>gerecht</h1>
           </div>
+          <div class="gerechtenlijst">
+            <div id="2gerecht" class="gerechtheader">
+              <h1>headergerecht</h1>
+            </div>
+            <div class="gerechtenfirst">
+              <h1>gerecht</h1>
+            </div>
+            <div class="gerechten">
+              <h1>gerecht</h1>
+          </div>
+          <div class="gerechtenlijst">
+            <div id="3gerecht" class="gerechtheader">
+              <h1>headergerecht</h1>
+            </div>
+            <div class="gerechtenfirst">
+              <h1>gerecht</h1>
+            </div>
+            <div class="gerechten">
+              <h1>gerecht</h1>
+          </div>
         </div>
       </div>
     </main>
     <footer></footer>
+  <script>
+    function searchbar(){
+    let input = document.getElementById('search').value
+    input=input.toLowerCase();
+    }
+  </script>
   </body>
 </html>
