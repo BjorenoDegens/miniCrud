@@ -8,6 +8,9 @@ html {
 }
 /*HEADER*/
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 .firstheaderbox {
@@ -44,6 +47,7 @@ main {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding-top: 120px;
 }
 main .container {
   display: flex;
@@ -66,9 +70,14 @@ main .container .menugerechten {
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.menu {
+.menu-spacer {
+  width: 220px;
   margin-right: 20px;
   margin-top: 50px;
+}
+
+.menu-spacer .menu {
+  position: fixed;
 }
 /*
 .menugerechten {

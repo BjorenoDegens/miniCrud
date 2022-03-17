@@ -28,9 +28,9 @@
           <div class="headertext">
             <div class="adres"></div>
             <a
-              href="https://www.google.com/maps/place/Cafetaria+Haalderen/@51.8863004,5.924765,17z/data=!4m13!1m7!3m6!1s0x47c7a7445b12dedd:0xce36fb5d6a90e5ea!2sVan+der+Mondeweg+28,+6685b,+6685+BP+Haalderen,+Nederland!3b1!8m2!3d51.8863004!4d5.9269537!3m4!1s0x47c7a7445b7cc331:0xe2ee3fc20a90100e!8m2!3d51.8863005!4d5.927035?hl=nl-NL"
+            href="https://www.google.com/maps/place/Cafetaria+Haalderen/@51.8863004,5.924765,17z/data=!4m13!1m7!3m6!1s0x47c7a7445b12dedd:0xce36fb5d6a90e5ea!2sVan+der+Mondeweg+28,+6685b,+6685+BP+Haalderen,+Nederland!3b1!8m2!3d51.8863004!4d5.9269537!3m4!1s0x47c7a7445b7cc331:0xe2ee3fc20a90100e!8m2!3d51.8863005!4d5.927035?hl=nl-NL"
             >
-              <p>Van der Mondeweg 28</p>
+            <p>Van der Mondeweg 28</p>
             </a>
           </div>
           <div class="headertext">
@@ -41,15 +41,21 @@
     </header>
     <main>
       <div class="container">
-        <div class="menu">
-          <input type="search" onkeyup="searchbar" name="search" placeholder="Search..">
-          <div class="menugerechten">
-            <a href="#1gerecht" class="textline">headergerecht</a>
-            <a href="#2gerecht" class="textline">Lidasdasdk 2</a>
-            <a href="#3gerecht" class="textline">Link 3</a>
+        <div class="menu-spacer">
+          <div class="menu">
+            <form role="search" id="form">
+              <input type="search" id="query" name="q"
+               placeholder="Search...">
+              <button><label for="search">search</label>
+              </button>
+            </form>
+            <div class="menugerechten">
+              <a href="#1gerecht" class="textline">headergerecht</a>
+              <a href="#2gerecht" class="textline">Lidasdasdk 2</a>
+              <a href="#3gerecht" class="textline">Link 3</a>
+            </div>
           </div>
         </div>
-        <p>DIT IS EEN TEST</p>
         <div class="gerechtenlijst">
           <div id="1gerecht" class="gerechtheader">
             <h1>headergerecht</h1>
@@ -69,26 +75,21 @@
             </div>
             <div class="gerechten">
               <h1>gerecht</h1>
-          </div>
-          <div class="gerechtenlijst">
-            <div id="3gerecht" class="gerechtheader">
-              <h1>headergerecht</h1>
             </div>
-            <div class="gerechtenfirst">
-              <h1>gerecht</h1>
+            <div class="gerechtenlijst">
+              <div id="3gerecht" class="gerechtheader">
+                <h1>headergerecht</h1>
+              </div>
+              <div class="gerechtenfirst">
+                <h1>gerecht</h1>
+              </div>
+              <div class="gerechten">
+                <h1>gerecht</h1>
+              </div>
             </div>
-            <div class="gerechten">
-              <h1>gerecht</h1>
-          </div>
-        </div>
+            <script src="js/main.js"></script>
       </div>
     </main>
     <footer></footer>
-  <script>
-    function searchbar(){
-    let input = document.getElementById('search').value
-    input=input.toLowerCase();
-    }
-  </script>
   </body>
 </html>
