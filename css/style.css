@@ -53,6 +53,7 @@ main .container {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 main .container .imgmain {
   width: 600px;
@@ -118,14 +119,33 @@ main .container .gerechtenlijst .gerechtheader {
 }
 main .container .gerechtenlijst .gerechtenfirst {
   border: 1px solid red;
-  padding: 20px;
-}
-main .container .gerechtenlijst .gerechten {
-  border: 1px solid red;
-  padding: 20px;
-  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
+main .container .gerechtenlijst .gerechten {
+  border: 1px solid red;
+  padding: 10px;
+  margin-top: 10px;
+}
+main .container .gerechtenlijst .gerechtenfirst .gerechtenname {
+  font-weight: bolder;
+  font-size: x-large;
+}
+main .container .gerechtenlijst .gerechtenfirst .gerechtendelen {
+  color: gray;
+  font-size: medium;
+  padding-top: 10px;
+}
+main .container .gerechtenlijst .gerechtenfirst .price {
+  font-weight: bold;
+  font-size: large;
+}
+main .container .gerechtenlijst .gerechtenfirst .foodimg img {
+  height: 100px;
+  width: 100px;
+}
 .mail {
   width: 25px;
   height: 25px;

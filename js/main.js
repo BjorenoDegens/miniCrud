@@ -1,24 +1,20 @@
-function searchbar() {
-  let input = document.getElementById("search").value;
-  input = input.toLowerCase();
-}
-const f = document.getElementById("form");
-const q = document.getElementById("query");
+const f = document.querySelector("#form");
+const q = document.querySelector("#query");
+const m = document.querySelector("#mailIndex");
 
-function submitted(event) {
-  event.preventDefault();
-  const url = "#" + q.value;
-  const win = window.open(url, "_self");
-  win.focus();
-}
-const m = (document.querySelector("mailIndex").onclick = Email());
-
-function Email() {
-  f.addEventListener("submit", submitted);
+//popup windows
+m.addEventListener("click", () => {
   window.open(
-    "https://www.google.com/",
+    "contact.html",
     "Google",
     "width=400,height=425,scrollbars=no,toolbar=no,location=no"
   );
-  return false;
-}
+});
+
+//Form/searchbar
+f.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const url = "#" + q.value;
+  const win = window.open(url, "_self");
+  win.focus();
+});
