@@ -1,9 +1,9 @@
-const f = document.querySelector("#form");
-const q = document.querySelector("#query");
-const m = document.querySelector("#mailIndex");
+const form = document.querySelector("#form");
+const query = document.querySelector("#query");
+const mailIndex = document.querySelector("#mailIndex");
 
 //popup windows
-m.addEventListener("click", () => {
+mailIndex.addEventListener("click", () => {
   window.open(
     "contact.html",
     "Google",
@@ -12,9 +12,9 @@ m.addEventListener("click", () => {
 });
 
 //Form/searchbar
-f.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const url = "#" + q.value;
+  const url = "#" + query.value;
   const win = window.open(url, "_self");
   win.focus();
 });
