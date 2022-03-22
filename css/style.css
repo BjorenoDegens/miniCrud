@@ -128,21 +128,24 @@ main .container .gerechtenlijst .gerechten {
   border: 1px solid red;
   padding: 10px;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
-main .container .gerechtenlijst .gerechtenfirst .gerechtenname {
+.gerechtenname {
   font-weight: bolder;
   font-size: x-large;
 }
-main .container .gerechtenlijst .gerechtenfirst .gerechtendelen {
+.gerechtendelen {
   color: gray;
   font-size: medium;
   padding-top: 10px;
 }
-main .container .gerechtenlijst .gerechtenfirst .price {
+.price {
   font-weight: bold;
   font-size: large;
+  font-style: italic;
 }
-main .container .gerechtenlijst .gerechtenfirst .foodimg img {
+.foodimg img {
   height: 100px;
   width: 100px;
 }
@@ -199,4 +202,10 @@ main .container .gerechtenlijst .gerechtenfirst .foodimg img {
 .shoppingcard:hover {
   background: url("/img/cart-arrow-down-solid.svg") no-repeat;
   background-size: contain;
+}
+
+.formclass {
+  margin: 100px;
+  border: 3px black solid;
+  padding: 5px;
 }
