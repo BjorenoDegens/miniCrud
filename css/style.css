@@ -153,33 +153,33 @@ main .container .gerechtenlijst .gerechten {
 .mail {
   width: 25px;
   height: 25px;
-  background: url("/img/envelope-solid\ \(1\).svg") no-repeat;
+  background: url("../img/envelope-solid\ \(1\).svg") no-repeat;
   background-size: contain;
   margin-right: 2px;
   transition-delay: 0.05s;
 }
 .mail:hover {
-  background: url("/img/envelope-open-solid.svg") no-repeat;
+  background: url("../img/envelope-open-solid.svg") no-repeat;
   background-size: contain;
 }
 
 .phone {
   width: 25px;
   height: 25px;
-  background: url("/img/blender-phone-solid.svg") no-repeat;
+  background: url("../img/blender-phone-solid.svg") no-repeat;
   background-size: contain;
   margin-right: 2px;
   transition-delay: 0.05s;
 }
 
 .phone:hover {
-  background: url("/img/phone-volume-solid\ \(1\).svg") no-repeat;
+  background: url("../img/phone-volume-solid\ \(1\).svg") no-repeat;
   background-size: contain;
 }
 .adres {
   width: 25px;
   height: 25px;
-  background: url("/img/location-pin-solid.svg") no-repeat;
+  background: url("../img/location-pin-solid.svg") no-repeat;
   background-size: contain;
   margin-right: 2px;
   transition-delay: 0.05s;
@@ -187,21 +187,21 @@ main .container .gerechtenlijst .gerechten {
 }
 
 .adres:hover {
-  background: url("/img/location-dot-solid.svg") no-repeat;
+  background: url("../img/location-dot-solid.svg") no-repeat;
   background-size: contain;
 }
 
 .shoppingcard {
   width: 25px;
   height: 25px;
-  background: url("/img/cart-shopping-solid.svg") no-repeat;
+  background: url("../img/cart-shopping-solid.svg") no-repeat;
   background-size: contain;
   margin-right: 2px;
   transition-delay: 0.05s;
 }
 
 .shoppingcard:hover {
-  background: url("/img/cart-arrow-down-solid.svg") no-repeat;
+  background: url("../img/cart-arrow-down-solid.svg") no-repeat;
   background-size: contain;
 }
 
