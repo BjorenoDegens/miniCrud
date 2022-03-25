@@ -13,7 +13,7 @@ mailIndex.addEventListener("click", () => {
 });
 inlogIndex.addEventListener("click", () => {
   window.open(
-    "inlog.php",
+    "/miniCrud/php/inlog.php",
     "Google",
     "width=400,height=425,scrollbars=no,toolbar=no,location=no"
   );

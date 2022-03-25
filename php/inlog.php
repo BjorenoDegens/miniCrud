@@ -10,8 +10,8 @@
 <body>
 
 <form method="post" action="check.php">
-    Gebruikersnaam: <input type="text" name="username" size="20" maxlength="20"><br />
-    Wachtwoord: <input type="password" name="wachtwoord" size="20" maxlength="20"><br /><br />
+    Gebruikersnaam: <input type="text" name="username" placeholder="username..."><br />
+    Wachtwoord: <input type="password" name="wachtwoord" placeholder="password..."><br /><br />
     <input type="submit" value="Log in!" />
 </form><br /><br />
 

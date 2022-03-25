@@ -8,8 +8,6 @@ $wachtwoord = $_POST['wachtwoord'];
 //array maken waar alle gebruikers in zitten. Alleen kleine letters gebruiken in namen
 $gebruikers = array(
     'admin' => 'admin',
-    'gebruikersnaam2' => 'wachtwoord2'
-    //enz
 );
 
 //kijk of de gebruiker bestaat, zoja:
