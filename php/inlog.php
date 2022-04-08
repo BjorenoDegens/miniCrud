@@ -12,7 +12,7 @@
 <form method="post" action="check.php">
     Gebruikersnaam: <input type="text" name="username" placeholder="username..."><br />
     Wachtwoord: <input type="password" name="wachtwoord" placeholder="password..."><br /><br />
-    <input type="submit" value="Log in!" />
+    <input type="submit" value="Log in" />
 </form><br /><br />
 
 </body>

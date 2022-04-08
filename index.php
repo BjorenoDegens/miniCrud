@@ -19,7 +19,7 @@
         <div class="boxheader">
           <div class="headertext">
             <div class="mail"></div>
-            <a href="/miniCrud/index.html" id="mailIndex">
+            <a href="./index.php" id="mailIndex">
               <p>Contact</p>
             </a>
           </div>
@@ -37,7 +37,7 @@
             </a>
           </div>
           <div class="headertext">
-             <a href="/miniCrud/index.html" id="inlogIndex" ><div class="shoppingcard"></div></a>
+             <a href="/miniCrud/index.php" id="inlogIndex" ><div class="shoppingcard"></div></a>
           </div>
         </div>
       </div>
@@ -73,14 +73,20 @@
           <div id="Favorieten" class="gerechtheader">
             <h1>Favorieten</h1>
           </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-              <div class="gerechtendelen">(onderdelenvoer)</div>
+          <?php
+            foreach($results as $gerecht){
+          ?>
+            <div class="gerechtenfirst">
+              <div>
+                <div class="gerechtenname"><?php echo $gerecht['titel']; ?></div>
+                '<div class="gerechtendelen"><?php echo $gerecht['titel']; ?></div>
+              </div>
+              <div class="price"><?php echo $gerecht['titel']; ?></div>
+              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
             </div>
-            <div class="price">€0,00</div>
-            <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
-          </div>
+          <?php
+            }
+          ?>
           <div class="gerechten">
             <div>
               <div class="gerechtenname">(gerecht)</div>

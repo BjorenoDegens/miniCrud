@@ -16,7 +16,7 @@ $_SESSION['login'] = "0";
 echo "Je bent nu uitgelogd<br /><br />";
 
 ?>
-<button type="button" onclick="window.close();">Close</button>
+<button type="button" onclick=window.close();>Close</button>
 
     </body>
 </html>
