@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+main {
+  min-height: 100vh;
+}
+form {
+  margin-top: 15px;
+}
+form label {
+  color: black;
+  background-color: red;
+  padding: 2px;
+}
+form .tab {
+  margin: 10px;
+}
+footer {
+  bottom: 0;
+}

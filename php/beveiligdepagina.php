@@ -5,19 +5,61 @@ if ($_SESSION['login'] != "1")
         header('Location: login.php');
         exit();
     }
-?>
+?><label>Input veld</label>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylepage.css">
     <title>AdminPage</title>
 </head>
 <body>
-    <?php echo "Je bent ingelogd als " . $_SESSION['login-naam'] . "."; ?>
-        
-        
-    </body>
+    <header> 
+        <?php echo "Je bent ingelogd als " . $_SESSION['login-naam'] . "."; ?>
+    </header>
+    <main>
+    <button id="some_id">Hide div</button>
+
+
+    <form action="addProduct.php" method="post" id="some_form">
+    <div class='tab'>
+        <label>titel</label>
+        <br>
+        <input type="text" name="titel" />
+    </div>
+    <div class='tab'>
+        <label>artiest</label>
+        <br>
+        <input type="text" name="artiest">
+    </div>
+    <div class='tab'>
+        <label>genre</label>
+        <br>
+        <input type="text" name="genre">
+    </div>
+    <div class='tab'>
+        <label>prijs</label>
+        <br>
+        <input type="number" name="prijs">
+    </div>
+    <div class='tab'>
+        <label>voorraad</label>
+        <br>
+        <input type="text" name="voorraad">
+    </div>
+    <input type="submit" name="submit">
+</form> 
+</main>
     <footer><a href="uitloggen.php">Uitloggen</a></footer>
+    <script type="text/javascript">
+    var theButton = document.getElementById('some_id');
+    
+    theButton.onclick = function() { 
+        document.getElementById('some_form').style.visibility='hidden';   
+    }
+    
+</script>
+</body>
 </html>
