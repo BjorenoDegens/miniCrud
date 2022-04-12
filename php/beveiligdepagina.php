@@ -60,10 +60,10 @@ if ($_SESSION['login'] != "1")
     
     theButton.onclick = function() {
         if(i==0) {
-        document.getElementById('some_form').style.display='block';
+        document.getElementById('some_form').style.display='none';
         i=1;
     }    else {
-        document.getElementById('some_form').style.display='none';
+        document.getElementById('some_form').style.display='block';
         i=0;
     }
     }

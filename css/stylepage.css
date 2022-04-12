@@ -23,8 +23,10 @@ main {
 form {
   background-color: red;
   width: 200px;
+  display: none;
   padding: 2px;
 }
+
 form label {
   color: black;
 }
