@@ -4,8 +4,8 @@ if ($_SESSION['login'] != "1")
     {
         header('Location: login.php');
         exit();
-    }
-?><label>Input veld</label>
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +17,14 @@ if ($_SESSION['login'] != "1")
 </head>
 <body>
     <header> 
+        <img class="imgheader" src="/miniCrud/img/logo_465x320.png" alt="">
         <?php echo "Je bent ingelogd als " . $_SESSION['login-naam'] . "."; ?>
     </header>
     <main>
-    <button id="some_id">Hide div</button>
+    <button id="some_id">Add product</button>
 
 
-    <form action="addProduct.php" method="post" id="some_form">
+    <form action="addProduct.php" method="post" id="some_form" display="none">
     <div class='tab'>
         <label>titel</label>
         <br>
@@ -52,13 +53,23 @@ if ($_SESSION['login'] != "1")
     <input type="submit" name="submit">
 </form> 
 </main>
-    <footer><a href="uitloggen.php">Uitloggen</a></footer>
+<footer><a href="uitloggen.php">Uitloggen</a></footer>
     <script type="text/javascript">
     var theButton = document.getElementById('some_id');
+    i=0;
     
-    theButton.onclick = function() { 
-        document.getElementById('some_form').style.visibility='hidden';   
+    theButton.onclick = function() {
+        if(i==0) {
+        document.getElementById('some_form').style.display='block';
+        i=1;
+    }    else {
+        document.getElementById('some_form').style.display='none';
+        i=0;
     }
+    }
+    // theButton.onclick = function() { 
+    //     document.getElementById('some_form').style.display='none';   
+    // }
     
 </script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-/** @var PDO $connect */
+// /** @var PDO $connect */
 $host = 'localhost';
 $db = 'miniCrud';
 $user = 'root';
@@ -12,11 +12,6 @@ $opt = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
-
-$sql = "SELECT * FROM gerechten";
-$stmt = $connect->prepare($sql);
-$stmt->execute();
-$result = $stmt->fetchAll();
 
 try {
     $connect = new PDO($dns, $user, $pass, $opt);

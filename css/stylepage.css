@@ -2,16 +2,36 @@
   padding: 0;
   margin: 0;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  background-color: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 main {
-  min-height: 100vh;
+  margin-top: 15px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
 }
 form {
-  margin-top: 15px;
+  background-color: red;
+  width: 200px;
+  padding: 2px;
 }
 form label {
   color: black;
-  background-color: red;
-  padding: 2px;
+}
+.imgheader {
+  width: 115px;
+  height: 115px;
+  margin: 5px;
 }
 form .tab {
   margin: 10px;

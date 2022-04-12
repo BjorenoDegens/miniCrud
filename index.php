@@ -12,7 +12,7 @@
     rel="stylesheet"
     />
     <title>Dun&Döner</title>
-    <?php require_once ('../php/connect.php')?>
+    <?php require_once ('php/connect.php')?>
   </head>
   <body>
     <header>
@@ -75,7 +75,15 @@
             <h1>Favorieten</h1>
           </div>
           <?php
-            foreach($results as $gerecht){
+          
+            $sql = "SELECT * FROM gerechten";
+            $stmt = $connect->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            foreach($result as $gerecht){
+              if($gerecht['categorie'] == 'broodjes'){
+              
+
           ?>
             <div class="gerechtenfirst">
               <div>
@@ -87,6 +95,7 @@
             </div>
           <?php
             }
+          }
           ?>
           <div class="gerechten">
             <div>
