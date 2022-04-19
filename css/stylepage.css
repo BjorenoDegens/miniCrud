@@ -22,9 +22,9 @@ main {
 }
 form {
   background-color: red;
-  width: 200px;
-  display: none;
-  padding: 2px;
+  width: auto;
+  padding: 5px;
+  margin-bottom: 15px;
 }
 
 form label {

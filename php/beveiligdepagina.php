@@ -1,10 +1,19 @@
 
 <?php
-if ($_SESSION['login'] != "1")
-    {
-        header('Location: login.php');
-        exit();
-    } 
+session_start();
+?>
+<?php
+    if($_SESSION["name"]) {
+    ?>
+    
+<?php
+    require_once ("connect.php");
+
+    $sql = "SELECT * FROM gerechten";
+    $stmt = $connect->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,15 +25,14 @@ if ($_SESSION['login'] != "1")
     <title>AdminPage</title>
 </head>
 <body>
+
     <header> 
         <img class="imgheader" src="/miniCrud/img/logo_465x320.png" alt="">
-        <?php echo "Je bent ingelogd als " . $_SESSION['login-naam'] . "."; ?>
+        <?php echo "Je bent ingelogd als " . $_SESSION['name'] . "."; ?>
     </header>
     <main>
-    <button id="some_id">Add product</button>
-
-
-    <form action="addProduct.php" method="post" id="some_form" display="none">
+    <button id="buttonForm">Add product</button>
+    <form action="addProduct.php" method="post" id="formProduct" >
     <div class='tab'>
         <label>titel</label>
         <br>
@@ -51,26 +59,65 @@ if ($_SESSION['login'] != "1")
         <input type="text" name="voorraad">
     </div>
     <input type="submit" name="submit">
-</form> 
+    </form>
+
+    <?php foreach($result as $gerechten){
+            ?>
+            <form action="updatedelProduct.php" method="post">
+        <div>
+            <label>ID</label>
+            <br>
+            <input readonly name="ID" value="<?php echo $gerechten['ID']; ?>" />
+        </div>
+        <div>
+            <label>titel</label>
+            <br>
+            <input type="text" name="titel" value="<?php echo $gerechten['titel']; ?>" />
+        </div>
+        <div>
+            <label>prijs</label>
+            <br>
+            <input type="text" name="prijs" value="<?php echo $gerechten['prijs']; ?>" />
+        </div>
+        <div>
+            <label>beschrijving</label>
+            <br>
+            <input type="text" name="beschrijving" value="<?php echo $gerechten['beschrijving']; ?>" />
+        </div>
+        <div>
+            <label>afbeelding</label>
+            <br>
+            <input type="number" name="afbeelding" value="<?php echo $gerechten['afbeelding']; ?>" />
+        </div>
+        <div>
+            <label>categorie</label>
+            <br>
+            <input type="text" name="categorie" value="<?php echo $gerechten['categorie']; ?>" />
+        </div>
+        <input type="submit" name="update" value="update"><input type="submit" name="delete" value="delete">
+    </form>
+        <?php
+        }
+        ?>
 </main>
-<footer><a href="uitloggen.php">Uitloggen</a></footer>
-    <script type="text/javascript">
-    var theButton = document.getElementById('some_id');
+<footer>
+    Welcome <?php echo $_SESSION["name"]; ?>. Click here to <a href="uitloggen.php" tite="Logout">Logout.
+        <script type="text/javascript">
+            var theButton = document.getElementById('buttonForm');
     i=0;
     
     theButton.onclick = function() {
         if(i==0) {
-        document.getElementById('some_form').style.display='none';
+            document.getElementById('formProduct').style.display='block';
         i=1;
     }    else {
-        document.getElementById('some_form').style.display='block';
+        document.getElementById('formProduct').style.display='none';
         i=0;
     }
-    }
-    // theButton.onclick = function() { 
-    //     document.getElementById('some_form').style.display='none';   
-    // }
-    
+}
 </script>
 </body>
 </html>
+<?php
+}else header('Location: inlog.php');
+?></footer>

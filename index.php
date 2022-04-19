@@ -12,7 +12,6 @@
     rel="stylesheet"
     />
     <title>Dun&Döner</title>
-    <?php require_once ('php/connect.php')?>
   </head>
   <body>
     <header>
@@ -57,242 +56,48 @@
               <button><label for="search">search</label></button>
             </form>
             <div class="menugerechten">
-              <a href="#Favorieten" class="textline">Favorieten</a>
-              <a href="#Broodjes" class="textline">Broodjes</a>
-              <a href="#Durum" class="textline">Dürüm</a>
-              <a href="#Pizza" class="textline">Pizza</a>
-              <a href="#Kapsalon" class="textline">Kapsalons</a>
-              <a href="#Gezinsbakken" class="textline">Gezinsbakken</a>
-              <a href="#Friet" class="textline">Friet</a>
-              <a href="#Kids" class="textline">Kids</a>
-              <a href="#Saus" class="textline">Saus</a>
-              <a href="#Drinken" class="textline">Drinken</a>
-            </div>
-          </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Favorieten" class="gerechtheader">
-            <h1>Favorieten</h1>
-          </div>
-          <?php
-          
-            $sql = "SELECT * FROM gerechten";
-            $stmt = $connect->prepare($sql);
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            foreach($result as $gerecht){
-              if($gerecht['categorie'] == 'broodjes'){
-              
-
-          ?>
-            <div class="gerechtenfirst">
-              <div>
-                <div class="gerechtenname"><?php echo $gerecht['titel']; ?></div>
-                '<div class="gerechtendelen"><?php echo $gerecht['titel']; ?></div>
-              </div>
-              <div class="price"><?php echo $gerecht['titel']; ?></div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
-            </div>
-          <?php
+              <?php
+              require_once('php/connect.php');
+      
+              $categorieen = ['favorieten', 'broodjes', 'pizza','dürüm','friet','gezinsbakken','kapsalon','kids','drinken','saus'];
+            foreach($categorieen as $categorie) {
+              ?>
+              <a href="#" class="textline"><?php echo $categorie; ?></a>
+              <?php
             }
-          }
+              ?>
+            </div>
+          </div>
+        </div>
+        <div class="gerechtenlijst">
+          <?php
+
+            foreach($categorieen as $categorie) {
+              echo '<div id="'.$categorie.'" class="gerechtheader">';
+              echo '<h1>'.$categorie.'</h1>';
+              echo '</div>';
+
+              $sql = "SELECT * FROM gerechten WHERE categorie = :categorie";
+              $stmt = $connect->prepare($sql);
+              $stmt->bindParam(':categorie', $categorie);
+              $stmt->execute();
+              $result = $stmt->fetchAll();
+              foreach($result as $gerecht){
+              
+              ?>
+                <div class="gerechten">
+                  <div>
+                    <div class="gerechtenname"><?php echo $gerecht['titel']; ?></div>
+                    '<div class="gerechtendelen"><?php echo $gerecht['beschrijving']; ?></div>
+                  </div>
+                  <div class="price">€<?php echo $gerecht['prijs']; ?></div>
+                  <div class="foodimg"><?php echo $gerecht['afbeelding']; ?></div>
+                </div>
+              <?php
+              }
+            }
           ?>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-              <div class="gerechtendelen">(onderdelenvoer)</div>
-            </div>
-            <div class="price">€0,00</div>
-            <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
-          </div>
-          <div class="gerechtenlijst">
-            <div id="Broodjes" class="gerechtheader">
-              <h1>Broodjes</h1>
-            </div>
-            <div class="gerechtenfirst">
-              <div>
-                <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
-            </div>
-          </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-              <div class="gerechtendelen">(onderdelenvoer)</div>
-            </div>
-            <div class="price">€0,00</div>
-            <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt="" /></div>
-          </div>
-        <div class="gerechtenlijst">
-          <div id="Durum" class="gerechtheader">
-            <h1>Dürüm</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Pizza" class="gerechtheader">
-            <h1>Pizza</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Kapsalon" class="gerechtheader">
-            <h1>Kapsalons</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Gezinsbakken" class="gerechtheader">
-            <h1>Gezinsbakken</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Friet" class="gerechtheader">
-            <h1>Friet</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Kids" class="gerechtheader">
-            <h1>Kids</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Saus" class="gerechtheader">
-            <h1>Saus</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="gerechtenlijst">
-          <div id="Drinken" class="gerechtheader">
-            <h1>Drinken</h1>
-          </div>
-          <div class="gerechtenfirst">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
-          <div class="gerechten">
-            <div>
-              <div class="gerechtenname">(gerecht)</div>
-                <div class="gerechtendelen">(onderdelenvoer)</div>
-              </div>
-              <div class="price">€0,00</div>
-              <div class="foodimg"><img src="/miniCrud/img/1240.jpg" alt=""></div>
-            </div>
+        
         </div>
         <script src="js/main.js"></script>
       </div>
