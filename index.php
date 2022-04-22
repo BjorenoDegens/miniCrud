@@ -62,7 +62,7 @@
               $categorieen = ['favorieten', 'broodjes', 'pizza','dürüm','friet','gezinsbakken','kapsalon','kids','drinken','saus'];
             foreach($categorieen as $categorie) {
               ?>
-              <a href="#" class="textline"><?php echo $categorie; ?></a>
+              <a href="#<?php echo $categorie; ?>" class="textline"><?php echo $categorie; ?></a>
               <?php
             }
               ?>
@@ -85,7 +85,7 @@
               foreach($result as $gerecht){
               
               ?>
-                <div class="gerechten">
+                <div id="<?php echo $gerecht['titel']; ?>"class="gerechten">
                   <div>
                     <div class="gerechtenname"><?php echo $gerecht['titel']; ?></div>
                     '<div class="gerechtendelen"><?php echo $gerecht['beschrijving']; ?></div>
