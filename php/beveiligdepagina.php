@@ -87,7 +87,7 @@ session_start();
         <div>
             <label>afbeelding</label>
             <br>
-            <input type="number" name="afbeelding" value="<?php echo $gerechten['afbeelding']; ?>" />
+            <input type="text" name="afbeelding" value="<?php echo $gerechten['afbeelding']; ?>" />
         </div>
         <div>
             <label>categorie</label>
