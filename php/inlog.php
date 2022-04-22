@@ -31,7 +31,6 @@
 <input type="password" name="password">
 <br><br>
 <input type="submit" name="submit" value="Submit">
-<input type="reset">
 </form>
 </body>
 </html>

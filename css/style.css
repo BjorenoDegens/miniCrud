@@ -212,3 +212,39 @@ main .container .gerechtenlijst .gerechten {
   border: 3px black solid;
   padding: 5px;
 }
+
+/* resposive */
+@media only screen and (max-width: 805px) {
+  main .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .menu-spacer .menu {
+    position: fixed;
+    display: none;
+  }
+  header .firstheaderbox .boxheader .headertext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  main .container .gerechtenlijst {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    min-width: 400px;
+    margin-top: 50px;
+  }
+  main .container .gerechtenlijst .gerechten {
+    border: 1px solid red;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
